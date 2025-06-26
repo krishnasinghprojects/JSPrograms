@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+        body{
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        h1{
+            margin: 20px;
+        }
+        button{
+            background-color: white;
+            border: 2.5px solid gray;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <button>Click Me</button>
+
+
+    <script>
+        //setTimeout Function Accepts A Callback Or A Function Refrence And Performs It Once As The Timeout Ends
+        const Timeout = setTimeout(function(){
+            console.log("Krishna Singh")
+        },2000)
+
+        //clearTimeout(Timeout) //Removes The Timeout From Queue
+
+        //setInterval Function Accepts A Callback Or A Function Refrence And Calls The Function Continously
+        const Interval = setInterval(function(name){
+            console.log(`Hi ${name}`)
+        },2000,"Krishna")
+
+        //clearInterval(Interval) //Removes The Interval From Queue
+        
+    </script>
+</body>
+</html>

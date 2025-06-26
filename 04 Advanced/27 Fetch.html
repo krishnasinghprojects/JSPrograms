@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+        }
+    body{
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .box{
+        padding: 20px;
+        margin: 20px;
+        color: white;
+        border-radius: 10px;
+        text-align: center;
+        border: 2.5px solid white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .box img{
+        width: 250px;
+        height: 250px;
+        border-radius: 10px;
+        border: solid white 2.5px;
+        margin: 40px;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="https://placehold.co/300x300?text=Placeholder" alt="Logo" id="logo">
+        <h1 id="heading">Hello Box</h1>
+        <p id="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit doloremque eligendi maxime iure libero est repellendus perferendis mollitia, aliquam deserunt.</p>
+    </div>
+
+    <script>
+        //ASYNC METHOD
+        /*async function getData(){
+            const response = await fetch("https://api.github.com/users/krishnasinghprojects")
+            const data=await response.json()
+            return data;
+        }
+        async function displayData() {
+            const userData=await getData();
+            console.log(userData)
+            const image=document.getElementById('logo')
+            const heading=document.getElementById('heading')
+            const description=document.getElementById('description')
+            heading.innerHTML=userData["name"]
+            description.innerHTML=userData["bio"]
+            image.src=userData.avatar_url;
+        }  
+        displayData();
+        */
+       
+        //THEN CATCH METHOD
+       fetch('https://api.github.com/users/krishnasinghprojects').then((response)=>{
+            return response.json()
+       }).then((data)=>{
+        const image=document.getElementById('logo')
+        const heading=document.getElementById('heading')
+        const description=document.getElementById('description')
+        heading.innerHTML=data["name"]
+        description.innerHTML=data["bio"]
+        image.src=data.avatar_url;
+       }) 
+    </script>
+
+</body>
+</html>

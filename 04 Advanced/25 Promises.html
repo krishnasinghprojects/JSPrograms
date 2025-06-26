@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //JSON.parse is used to convert string to json as usual API calls give result in string
+
+        //Promise : The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+        
+        //Success Promise
+        const promise1= new Promise(function(resolve,reject){
+            //Async Tasks
+            //Database Calls, Cryptography, Network Calls
+            resolve(50) //Passing Value To Function
+
+        })
+        promise1.then(function(value){
+            console.log(`Promise Consumed ${value}`)
+        })
+
+        //Failure Promise
+        const promise2= new Promise(function(resolve,reject){
+            let error=true
+            if(!error){
+                resolve("Good")
+            }
+            else{
+                reject("Bad")
+            }
+
+        })
+        promise2
+        .then(function(value){
+            console.log(value)
+        }) //When There Is No Error Executes When Success
+        .catch(function(error){
+            console.log(error)
+        }) //When Error Value Is Caught Executes When Error
+        .finally(function(){
+            console.log(`Promise Completed`)
+        }) //Always Executed
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const promise= new Promise(function(resolve,reject){
+            let error=true
+            if(!error){
+                resolve("Good")
+            }
+            else{
+                reject("Bad")
+            }
+
+        })
+        async function consumePromise(){
+            try {
+                const response = await promise
+                console.log(response)
+            } catch (error) {
+                console.log(error)
+            }
+        } //Async Await In Itself Doesnt Offer Error Handling So Try Catch Is Used
+        consumePromise();
+    </script>
+</body>
+</html>
